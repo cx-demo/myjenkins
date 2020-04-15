@@ -2,7 +2,7 @@
 FROM jenkins/jenkins:lts
 
 # Creator
-MAINTAINER Pedric (cxdemosg@gmail.com)
+LABEL maintainer="Pedric (cxdemosg@gmail.com)"
 
 # Install maven in container
 USER root
@@ -20,4 +20,3 @@ RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 # Adding scripts
 COPY groovy/* /usr/share/jenkins/ref/init.groovy.d/
-

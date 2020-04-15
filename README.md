@@ -2,14 +2,43 @@
 * Author: Pedric Kng
 * Updated: 25 Feb 2020
 
-STILL IN CONSTRUCTION
+Guide on installing Jenkins container with Checkmarx plugin
+See https://github.com/cx-demo/myjenkins
 
 ***
 ## Overview
 
+## Installation
+1. Create [Dockerfile](Dockerfile)
+``` groovy
+# base image
+FROM jenkins/jenkins:lts
+
+# Creator
+LABEL maintainer="Pedric (cxdemosg@gmail.com)"
+
+# Install maven in container
+USER root
+RUN apt-get update && apt-get install -y maven
+USER jenkins
+
+# Disable Jenkins setup wizard
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+
+# Add list of plugins
+ADD plugins.txt /usr/share/jenkins/ref/
+
+# Install plugins
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+
+# Adding scripts
+COPY groovy/* /usr/share/jenkins/ref/init.groovy.d/
+
+```
+
 
 ## References
-Automating Jenkins Docker setup with default admin account [[1]]]  
+Automating Jenkins Docker setup with default admin account [[1]]  
 Dockerizing jenkins 2 [[2]]  
 
 
