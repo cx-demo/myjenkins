@@ -1,6 +1,6 @@
 # Customizing Checkmarx Jenkins container
 * Author: Pedric Kng
-* Updated: 25 Feb 2020
+* Updated: 17 Dec 2020
 
 Guide on installing Jenkins container with Checkmarx plugin
 See https://github.com/cx-demo/myjenkins
@@ -92,7 +92,7 @@ RUN usermod -aG docker jenkins
 
 2. Give docker cli(Jenkins Container) privileges to docker.sock (host)
 
-Quick means is to grant all permissions, but it is recommended for production.
+Quick means is to grant all permissions, but it is NOT recommended for production.
 ```
 sudo chmod 777 /var/run/docker.sock
 ```
