@@ -1,4 +1,4 @@
-# Customizing Checkmarx Jenkins container
+# Jenkins container including Checkmarx plugin
 * Author: Pedric Kng
 * Updated: 17 Dec 2020
 
@@ -118,4 +118,5 @@ Docker inside Docker for Jenkins [[4]]
 [2]:https://dzone.com/articles/dockerizing-jenkins-2-setup-and-using-it-along-wit "Dockerizing jenkins 2"
 [3]:https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers
 [4]:https://itnext.io/docker-inside-docker-for-jenkins-d906b7b5f527 "Docker inside Docker for Jenkins"
-
+[5]:https://github.com/wardviaene/jenkins-course "jenkins-course"
+[6]:https://github.com/wardviaene/jenkins-docker
